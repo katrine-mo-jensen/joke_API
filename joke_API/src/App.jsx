@@ -3,8 +3,9 @@ import "./App.css";
 
 function App() {
   const [joke, setJoke] = useState([]);
+  
   useEffect(() => {
-    const url = "https://official-joke-api.appspot.com/random_ten";
+    const url = "https://official-joke-api.appspot.com/random_joke";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setJoke(data));
@@ -14,14 +15,11 @@ function App() {
   return (
     <>
       <h1>Jokes</h1>
-      {joke.map((item, index) => {
-        return (
-          <>
-            <h3 key={index}>{item.setup} </h3>
-            <p>{item.punchline}</p>
-          </>
-        );
-      })}
+      <div>
+            <h3>{joke.setup} </h3>
+            <p>{joke.punchline}</p>
+          </div>
+      <button>New joke?</button>
     </>
   );
 }
