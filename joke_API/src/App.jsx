@@ -15,11 +15,12 @@ function App() {
   return (
     <>
       <h1>Jokes</h1>
-      <div>
+      <form>
             <h3>{joke.setup} </h3>
             <p>{joke.punchline}</p>
-          </div>
-      <button>New joke?</button>
+            <button>New joke?</button>
+          </form>
+    
     </>
   );
 }
